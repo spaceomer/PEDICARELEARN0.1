@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="/css/addcours.css">
+    <title>הוסף קורס +</title>
+</head>
+<body dir="rtl">
+        <form action="/admin/<%= user.id %>/addcours" method="POST" class="form" id="adduser">
+            <div class="titleBox">
+                <h1 class="Title">קורס חדש</h1>
+                <p class="Subtitle"></p>
+            </div>
+            <div class="info"> 
+                <div>
+                    <p>קורס:</p>
+                    <div class="Courses">
+                        <% courses.forEach(function(cours) { %>
+                            <div class="cours" onclick="cours('<%= cours.id %>')">
+                                <h4><%= cours.name %></h4>
+                            </div>
+                        <% }) %> 
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <p>משתמש:</p>
+                        <input class="userInput" name="email" type="text" value="<%= user.name %>" disabled>
+                    </div>
+                    <div>
+                        <p>תאריך התחלה:</p>
+                        <input class="userInput" name="date" type="date" autofocus> 
+                    </div>
+                    <div>
+                        <p>תאריך סיום:</p>
+                        <input class="userInput" name="date" type="date" autofocus> 
+                    </div>
+                </div>
+            </div>
+            <div class="control">
+                <button  type="submit" class="addButton">הוסף קורס ל<%= user.name %></button>
+            </div>   
+        </form>  
+        <script>
+            const courses = document.querySelectorAll('.cours')
+                courses.forEach(function(cours) {
+                    cours.addEventListener('click', (e) => {
+                        e.preventDefault()
+                        courses.forEach(function(cours) {
+                            cours.classList.remove('cours1')
+                        })
+                        cours.classList.add('cours1')
+                    }) 
+                })  
+            function cours(cours) {
+                axios.post('/admin/<%= user.id %>/addcours', { cours:cours }) 
+            }
+        </script>
+</body>
+</html>

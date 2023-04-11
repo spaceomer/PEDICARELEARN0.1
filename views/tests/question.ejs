@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/question.css">
+    <title><%= question.title %></title>
+</head>
+<body dir="rtl"> 
+    <div class="questionBox">
+        <div class="question">
+            <select class="categorySelect" name="categorys">
+                <% categorys.forEach(function(category) { %>
+                    <option label="<%= category.name %>" value="<%= category.id %>"><%= category.name %></option>
+                <% }) %>
+            </select>
+            <input type="file" class="imageAdd">
+            <div class="titleBox">
+                <a href="/admin/tests"><span class="material-symbols-outlined">
+                    chevron_right
+                    </span></a><h1 class="title"><%= question.title %></h1>
+            </div>
+        </div>
+        <div class="answers">
+            <div class="answerBox">1.
+                <input type="text" class="answer" value="<%= question.option1 %>">
+            </div> 
+            <div class="answerBox">2.
+                <input type="text" class="answer" value="<%= question.option2 %>">
+            </div>
+            <div class="answerBox">3.
+                <input type="text" class="answer" value="<%= question.option3 %>">
+            </div>
+            <div class="answerBox">4.
+                <input type="text" class="answer" value="<%= question.option4 %>">
+            </div>
+        </div>
+        <div class="contols">
+            <button class="save">שמור</button>
+            <button class="delete"><span class="material-symbols-outlined">delete</span></button>
+        </div>
+    </div> 
+</body>
+</html> 

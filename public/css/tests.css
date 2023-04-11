@@ -1,0 +1,203 @@
+body {
+    --color-primary: #4296E3;
+    --color-primary-dark: #3477b3;
+    --color-error: #ca5858;
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+.Logo {
+    font-family: 'Open Sans', sans-serif;
+    text-align: right;
+    position: fixed;
+    font-size: 30px;
+    right: 20px;
+    top: 20px;
+    cursor: pointer;
+}
+
+.Logo1 {
+    font-weight: 100;    
+}
+
+.Logo2 {
+    font-weight: 1000;
+}
+
+.UserBar {
+    position: fixed;
+    top: 30px;
+    left: 30px;
+    vertical-align: middle;
+}
+
+.UserName {
+    color: black;
+    vertical-align: middle;
+}
+
+.material-symbols-outlined {
+    vertical-align: middle;
+}
+
+.userOptions {
+    border: 1px solid;
+    border-color: #f0f0f0;
+    background-color: #ffffff;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    border-radius: 15px;
+    height: 150px;
+    width: 110px;
+    position: absolute;
+    transform: translateY(30px);
+    display: none;
+}
+
+.logOutButton {
+    width: 100%;
+    height: 40px;
+    border: 0;
+    background-color: white;
+    font-family: 'Open Sans', sans-serif;
+    cursor: pointer;
+}
+
+.logOutButton:hover {
+    background-color: #f8f8f8;
+}
+
+.logOutButton span {
+    font-size: 20px;
+    margin-left: 8px;
+    color: #c2c2c2;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.display {
+    display: block;
+}
+
+.space {
+    width: 100%;
+    height: 80px;
+}
+
+.testsBox {
+    width: 100%;
+    height: max-content;
+    display: none;
+}
+
+#tests {
+    display: block;
+}
+
+.testes {
+    width: 100%;
+    height: max-content;
+    gap: 15px;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+}
+
+.test {
+    height: 170px;
+    width: 403px;
+    border: 1px solid;
+    border-color: #f0f0f0;
+    background-color: #ffffff;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    margin-right: 2vw;
+    border-radius: 15px;
+    padding-right: 30px;
+    padding-left: 30px;
+    margin-bottom: 50px;
+    float: right;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+.testTitle {
+    margin-top: 0;
+    font-size: 40px;
+    margin-bottom: 0;
+}
+
+.test span {
+    font-size: 40px;
+}
+
+.test:hover {
+    background-color: #f7f7f7;
+}
+
+.title {
+    margin-right: 20px;
+}
+
+.nuvBar {
+    width: 100%;
+    height: 70px;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+}
+
+.nuv {
+    width: max-content;
+    padding-left: 15px;
+    padding-right: 15px;
+    height: 40px;
+    background-color: #0e0e0e;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    margin-right: 10px;
+    color: white;
+    cursor: pointer;
+}
+
+.nuv:first-child {
+    background-color: #3477b3;
+}
+
+.add {
+    height: 170px;
+    width: 403px;
+    border: 1px solid;
+    border-color: #f0f0f0;
+    background-color: #ffffff;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    margin-right: 2vw;
+    border-radius: 15px;
+    padding-right: 30px;
+    padding-left: 30px;
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.add span {
+    font-size: 50px;
+}
+
+.add:hover {
+    border-color: #4296E3;
+    cursor: pointer;
+}

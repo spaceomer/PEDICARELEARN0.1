@@ -1,0 +1,19 @@
+<link rel="stylesheet" href="/css/coursformats.css">
+<div onclick="window.location='/admin'" class="Logo">
+    <span class="material-symbols-outlined">arrow_forward_ios</span>
+    <a class="Logo1">לומדה</a>
+    <a class="Logo2">פדיקר</a>
+</div>
+<div class="UserBar">
+    <div class="userOptions">
+        <form action="/logout?_method=DELETE" method="POST">
+            <button type="submit" class="logOutButton"><span class="material-symbols-outlined">logout</span>התנתקות</button>
+        </form>
+    </div>
+    <span class="material-symbols-outlined" name="moreOptions", id="moreOptions">expand_more</span>
+    <a class="UserName"><%= name %></a>
+    <span class="material-symbols-outlined">
+        account_circle
+    </span>
+</div>
+<div class="space"></div>

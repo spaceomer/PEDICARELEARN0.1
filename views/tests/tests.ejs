@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/tests.css">
+    <title>מבחנים</title>
+</head>
+<body  dir="rtl"> 
+    <%- include('../layouts/header3') %>
+    <div class="nuvBar">
+        <div class="nuv" id="testsOp">מבחנים</div>
+        <div class="nuv" id="questionsOp">שאלות</div>
+    </div>
+    <div class="testsBox"  id="tests">
+        <div class="titleBox">
+            <h1 class="title" >מבחנים:</h1>
+        </div>
+        <div class="testes">
+             <% tests.forEach(function(test) { %>
+                 <div class="test" onclick="window.location='/admin/tests/<%= test.id %>'">
+                     <div>
+                         <h3 class="testTitle"><%= test.title %></h3>
+                         <p class="coursDes"><%= test.cours %></p>
+                     </div>
+                     <span class="material-symbols-outlined">more_vert</span>
+                 </div>   
+            <% }) %>  
+            <div onclick="window.location='/admin/coursformats/addtest'" class="add">
+                 <span class="material-symbols-outlined">add</span>     
+             </div> 
+        </div>
+    </div>
+    <div class="testsBox" id="questions">
+        <div class="titleBox">
+            <h1 class="title" >שאלות:</h1>
+        </div>
+        <div class="testes">
+             <% questions.forEach(function(question) { %>
+                 <div class="test" onclick="window.location='/admin/questions/<%= question.id %>'">
+                     <div>
+                         <h3 class="testTitle"><%= question.title %></h3>
+                         <p class="coursDes"><%= question.category %></p>
+                     </div>
+                     <span class="material-symbols-outlined">more_vert</span>
+                 </div>   
+            <% }) %>  
+            <div onclick="window.location='/admin/coursformats/addtest'" class="add">
+                 <span class="material-symbols-outlined">add</span>     
+             </div> 
+        </div>
+    </div>
+    <script>
+        const options = document.querySelectorAll('.nuv')
+        const tests = document.querySelector('#tests')
+        const questions = document.querySelector('#questions')
+
+        options.forEach(function(option) {
+            option.addEventListener("click", function() {
+                options.forEach(function(op) {
+                    op.style.backgroundColor = '#0e0e0e'
+                })
+                this.style.backgroundColor = '#3477b3'
+                if (option.getAttribute("id") === "testsOp") {
+                    tests.style.display = "block"
+                    questions.style.display = "none"
+                }
+                if (option.getAttribute("id") === "questionsOp") {
+                    tests.style.display = "none"
+                    questions.style.display = "block"
+                }
+            })
+        })
+    </script>
+    <script src="/animations/moreOptions.js"></script>
+</body>
+</html> 

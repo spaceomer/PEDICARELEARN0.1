@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/coursformats.css">
+    <title>תבניות קורסים</title>
+</head>
+<body  dir="rtl"> 
+    <%- include('../layouts/header3') %> 
+    <div class="nuvBar">
+        <div class="nuv" id="testsOp">פורמטים קורסים</div>
+        <div class="nuv" id="sectionsOp">חלקים</div>
+    </div>
+    <div class="coursesBox" id="courses">
+        <% courses.forEach(function(cours) { %>
+            <div class="cours" onclick="window.location='/admin/coursformats/<%= cours.id %>'">
+                <div>
+                    <h3 class="coursTitle"><%= cours.name %></h3>
+                    <p class="coursDes"><%= cours.description %></p>
+                </div>
+                <span class="material-symbols-outlined">more_vert</span>
+            </div>   
+       <% }) %>  
+    <div class="addcours" onclick="window.location='/admin/addcoursformat'">
+        <span id="Coursadd" class="material-symbols-outlined">add</span>
+    </div>   
+    </div>
+    <div class="coursesBox" id="sections">
+        <% sections.forEach(function(sec) { %>
+            <div class="cours" onclick="window.location='/admin/coursformats/sections/<%= sec.id %>'">
+                <div>
+                    <h3 class="coursTitle"><%= sec.name %></h3>
+                    <p class="coursDes"><%= sec.description %></p>
+                </div>
+                <span class="material-symbols-outlined">more_vert</span>
+            </div>   
+       <% }) %> 
+    <div class="addcours" onclick="window.location='/admin/coursformats/addsection'">
+        <span id="Coursadd" class="material-symbols-outlined">add</span>
+    </div>  
+    </div>
+    <script>
+        const options = document.querySelectorAll('.nuv')
+        const tests = document.querySelector('#courses')
+        const sections = document.querySelector('#sections')
+
+        options.forEach(function(option) {
+            option.addEventListener("click", function() {
+                options.forEach(function(op) {
+                    op.style.backgroundColor = '#0e0e0e'
+                })
+                this.style.backgroundColor = '#3477b3'
+                if (option.getAttribute("id") === "testsOp") {
+                    tests.style.display = "block"
+                    sections.style.display = "none"
+                }
+                if (option.getAttribute("id") === "sectionsOp") {
+                    tests.style.display = "none"
+                    sections.style.display = "block"
+                }
+            })
+        })
+    </script>
+    <script src="/animations/controls.js"></script>
+    <script src="/animations/moreOptions.js"></script>
+</body>
+</html> 

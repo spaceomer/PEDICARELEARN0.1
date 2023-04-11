@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/coursformat.css">
+    <title><%= section.name %></title>
+</head>
+<body  dir="rtl"> 
+    <div class="alert">
+        <div class="alertDiv">
+            <h5>מחק את  <%= section.name %></h5>
+        </div>
+        <div class="alertDiv">
+            <form action="/admin/coursformats/sections/<%= section.id %>?_method=DELETE" method="POST" class="form1">
+                <button type="submit" class="alertButton">מחק</button>
+            </form>
+            <button id="cancel" class="alertButton">בטל</button>
+        </div>
+    </div>
+    <div class="header">
+        <div class="header2">
+            <a href="/admin/coursformats"><span class="material-symbols-outlined">
+                chevron_right
+                </span></a>
+            <div class="firstInfo">
+                <h1 class="name"><%= section.name %></h1>
+                <p class="des"><%= section.description %></p>
+            </div>
+        </div>
+        <div class="userControl">
+            <button id="edit" class="contorlButtons" onclick="window.location ='/admin/coursformats/sections/<%= section.id %>/edit'">
+                <span class="material-symbols-outlined">edit</span>
+            </button>
+            <button id="delete" class="contorlButtons">
+                <span class="material-symbols-outlined">delete</span>
+            </button>
+        </div>
+    </div>
+        <div class="coursInfo">
+            <div class="infoTitle">
+                <h3>פרטי פרק:</h3>
+            </div>
+            <div class="info"> 
+                <div>
+                    <p>שם:</p>
+                    <input class="coursInput" name="name" type="text" autofocus required value="<%= section.name %>" disabled> 
+                </div>
+                <div>
+                    <p>תיאור:</p>
+                    <input class="coursInput" name="email" type="text" autofocus required value="<%= section.description %>" disabled> 
+                </div>
+            </div>
+        </div>
+        <div class="sectionVideo">
+            <video class="video" controls src="<%= section.videoPath %>"></video>
+        </div>
+        <script>
+            const deleteButton = document.querySelector('#delete')
+            const cancelButton = document.querySelector('#cancel')
+            const alertdelete = document.querySelector('.alert')
+            deleteButton.addEventListener("click", () => {
+                alertdelete.classList.add('alertshow')
+            })
+            cancelButton.addEventListener("click", () => {
+                alertdelete.classList.remove('alertshow')
+            })
+        </script>
+</body>
+</html> 

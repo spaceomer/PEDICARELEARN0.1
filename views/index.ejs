@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/index.css">
+    <title>הקורסים שלי</title>
+</head>
+<body  dir="rtl"> 
+    <div class="Logo">
+        <a class="Logo1">לומדה</a>
+        <a class="Logo2">פדיקר</a>
+    </div>
+    <div class="UserBar">
+        <div class="userOptions">
+            <form action="/logout?_method=DELETE" method="POST">
+                <button type="submit" class="logOutButton"><span class="material-symbols-outlined">logout</span>התנתקות</button>
+            </form>
+            <button onclick="window.location='/cours'" class="logOutButton"><span class="material-symbols-outlined">school</span>קורס</button>
+            <button onclick="window.location='/admin'" class="logOutButton"><span class="material-symbols-outlined">school</span>אדמין</button>
+        </div>
+        <span class="material-symbols-outlined" name="moreOptions", id="moreOptions">expand_more</span>
+        <a class="UserName"><%= name %></a>
+        <span class="material-symbols-outlined">
+            account_circle
+        </span>
+    </div>
+    <div class="title">
+        <h1 class="Maintitle">הקורסים שלי</h1>
+        <p class="Secenderytitle">לחץ על הקורס שלך והתחל ללמוד.</p>
+    </div>
+    
+        <%courses.forEach(function(cours) {%>
+            <div class="CoursBox">
+                <img class="CoursImage" src="/images/acls.jpeg">
+                <div class="CoursTitle">
+                    <h3 class="CoursTitle1"><%= cours.name %></h3>
+                    <p class="CoursTitle2"><%= cours.description %></p>
+                </div>
+                <div class="ProgressBox"  onclick="window.location='/mycourses/<%= cours.id %>/<%= cours.progressSec %>'">
+                    <div class="TitleBox">סיימת 20%, המשך ללמוד</div>
+                    <div class="ProgressBar">
+                    </div>
+                </div>
+            </div>
+        
+        <% }); %>
+        
+
+
+    <div class="main">
+    </div>
+    <script src="/animations/moreOptions.js"></script>
+</body>
+</html> 

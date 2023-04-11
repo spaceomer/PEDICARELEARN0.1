@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/cours.css">
+    <title>קורס</title>
+</head>
+<body dir="rtl"> 
+    <form action="/mycourses/<%= cours1.id %>/<%= cours1.progressSec %>" method="POST">
+        <button class="Logo">
+                <span class="material-symbols-outlined">arrow_forward_ios</span>
+                <a class="Logo1">לומדה</a>
+                <a class="Logo2">פדיקר</a>
+                <input name="progress" id="currentTimeInput" type="hidden">
+        </button>
+    </form>
+    <div class="UserBar">
+        <div class="userOptions">
+            <form action="/logout?_method=DELETE" method="POST">
+                <button type="submit" class="logOutButton"><span class="material-symbols-outlined">logout</span>התנתקות</button>
+            </form>
+        </div>
+        <span class="material-symbols-outlined" name="moreOptions", id="moreOptions">expand_more</span>
+        <a class="UserName"><%= name %></a>
+        <span class="material-symbols-outlined">
+            account_circle
+        </span>
+    </div>
+    <div class="space"></div>
+    <div class="progressBox">
+        <div class="progressBar"></div> 
+    </div>
+    <div class="LearnScreen">
+        <div class="titleBox"> 
+            <div>
+                <p class="parts"><%= cours.name %></p>
+                <h1 class="part" name="section"><%= sections.indexOf(section) + 1 %>. <%= section.name %></h1>
+            </div>
+            <div class="timeBox" dir="ltr"><p class="currentTime" name="currentTime">00:00:00</p><p>/</p><p class="videoTime" name="videoTime">00:00:00</p></div>
+        </div>
+        <div class="videoBox">
+            <div class="nextback">
+                <div class="endScreen">
+                    <h3 class="endTitle">ברכותנו, סיימתה את פרק <%= section.name %> בקורס <%= cours.name %></h3>
+                    <div class="buttons">
+                        <form id="next" class="next" action="/mycourses/<%= cours1.id %>/<%= cours1.progressSec + 1 %>/change" method="POST">
+                            <button class="nextText" dir="ltr">עבור לפרק הבא ></button>
+                            <input name="progressSec" id="currentSecInput" value="<%= cours1.progressSec %>" type="hidden">
+                        </form>
+                        <button id="restart" class="next" style="background-color: #ca5858;">צפה בפרק זה שוב</button>
+                    </div>
+                </div>
+            </div>
+            <video class="video" src="<%= sec.videoPath %>" id="video"></video>
+            <div class="videoProggressBox" dir="ltr">
+                <div class="videoProggress"></div>
+            </div>
+        </div>
+        <div class="controls">
+            <span id="volume" class="material-symbols-outlined">volume_up</span>
+            <span id="play" class="material-symbols-outlined">play_arrow</span>   
+            <span id="backword" class="material-symbols-outlined">fast_rewind</span> 
+        </div>
+    </div>
+    <script>
+        function start() {
+            const video = document.querySelector('.video')
+            video.currentTime = Number('<%= videoTime %>')
+        }
+        
+    </script>
+    <script src="/animations/controls.js"></script>
+    <script src="/animations/moreOptions.js"></script>
+</body>
+</html> 

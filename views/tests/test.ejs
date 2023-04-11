@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/test.css">
+    <title><%= test.title %></title>
+</head>
+<body  dir="rtl"> 
+    <div class="header">
+        <a href="/admin/tests"><span class="material-symbols-outlined">
+            chevron_right
+            </span></a>
+        <div class="firstInfo">
+            <h1 class="name"><%= test.title %></h1>
+            <p class="des"><%= test.cours %></p>
+        </div>
+    </div>
+        <div class="coursInfo">
+            <div class="infoTitle">
+                <h3>פרטי מבחן:</h3>
+            </div>
+            <div class="info"> 
+                <div>
+                    <p>שם:</p>
+                    <input class="coursInput" name="name" type="text" autofocus required value="<%= test.title %>" > 
+                </div>
+                <div>
+                    <p>קורס:</p>
+                    <input class="coursInput" name="email" type="text" autofocus required value="<%= test.cours %>" > 
+                </div>
+            </div>
+        </div>
+        <div class="coursBody">
+            <% questions.forEach((question) => {%> 
+                <div class="section">
+                    <div class="sectionQuizs">
+                        <p class="quiz">שאלה 1</p>
+                        <span class="material-symbols-outlined">tune</span>
+                    </div>
+                    <div class="postion">
+                        <span class="material-symbols-outlined" id="up" >expand_less</span>
+                        <span class="material-symbols-outlined" id="down" >expand_more</span>  
+                    </div>
+                </div>
+            <% }) %> 
+               
+            <div onclick="window.location='/admin/test/<%= test.id %>/addquestion'" class="addsection">
+                <span class="material-symbols-outlined">add</span>     
+            </div>  
+            <div class="finalTest">
+                <h2 class="sectionTitle">מבחן סיום</h2>
+                <span class="material-symbols-outlined">more_vert</span> 
+            </div> 
+        </div>
+</body>
+</html> 

@@ -1,0 +1,156 @@
+body {
+    --color-primary: #4296E3;
+    --color-primary-dark: #3477b3;
+    --color-error: #ca5858;
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+.Logo {
+    font-family: 'Open Sans', sans-serif;
+    text-align: right;
+    position: fixed;
+    font-size: 30px;
+    right: 20px;
+    top: 20px;
+    cursor: pointer;
+}
+
+.UserBar {
+    position: fixed;
+    top: 30px;
+    left: 30px;
+    vertical-align: middle;
+}
+
+.UserName {
+    color: black;
+    vertical-align: middle;
+}
+
+.material-symbols-outlined {
+    vertical-align: middle;
+}
+
+.userOptions {
+    border: 1px solid;
+    border-color: #f0f0f0;
+    background-color: #ffffff;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    border-radius: 15px;
+    height: 150px;
+    width: 110px;
+    position: absolute;
+    transform: translateY(30px);
+    display: none;
+}
+
+.logOutButton {
+    width: 100%;
+    height: 40px;
+    border: 0;
+    background-color: white;
+    font-family: 'Open Sans', sans-serif;
+    cursor: pointer;
+}
+
+.logOutButton:hover {
+    background-color: #f8f8f8;
+}
+
+.logOutButton span {
+    font-size: 20px;
+    margin-left: 8px;
+    color: #c2c2c2;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.display {
+    display: block;
+}
+
+.space {
+    width: 100%;
+    height: 80px;
+}
+
+.cours {
+    height: 170px;
+    width: 403px;
+    border: 1px solid;
+    border-color: #f0f0f0;
+    background-color: #ffffff;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    margin-right: 2vw;
+    border-radius: 15px;
+    padding-right: 30px;
+    padding-left: 30px;
+    margin-bottom: 50px;
+    float: right;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.addcours {
+    height: 170px;
+    width: 403px;
+    border: 1px solid;
+    border-color: #f0f0f0;
+    background-color: #ffffff;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    margin-right: 2vw;
+    border-radius: 15px;
+    padding-right: 30px;
+    padding-left: 30px;
+    margin-bottom: 50px;
+    float: right;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.cours2 {
+    border-color: #7cb2e6;
+}
+
+.cours3 {
+    border-color: #f0f0f0;
+}
+
+.coursTitle {
+    margin-top: 0;
+    font-size: 40px;
+    margin-bottom: 0;
+}
+
+.cours span {
+    font-size: 40px;
+}
+
+.addSec {
+    border: 0;
+    background-color: #4296E3;
+    font-family: 'Open Sans', sans-serif;
+    width: 150px;
+    height: 40px;
+    font-size: 20px;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.addSec:hover {
+    background-color: #3477b3;
+}

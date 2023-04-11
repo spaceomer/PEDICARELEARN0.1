@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/coursformat.css">
+    <title><%= cours.name %></title>
+</head>
+<body  dir="rtl"> 
+    <div class="alert">
+        <div class="alertDiv">
+            <h5>מחק את  <%= cours.name %></h5>
+        </div>
+        <div class="alertDiv">
+            <form action="/admin/coursformats/<%= cours.id %>?_method=DELETE" method="POST" class="form1">
+                <button type="submit" class="alertButton">מחק</button>
+            </form>
+            <button id="cancel" class="alertButton">בטל</button>
+        </div>
+    </div>
+    <div class="header">
+        <div class="header2">
+            <a href="/admin/coursformats"><span class="material-symbols-outlined">
+                chevron_right
+                </span></a>
+            <div class="firstInfo">
+                <h1 class="name"><%= cours.name %></h1>
+                <p class="des"><%= cours.description %></p>
+            </div>
+        </div>
+        <div class="userControl">
+            <button id="edit" class="contorlButtons" onclick="window.location ='/admin/coursformats/<%= cours.id %>/edit'">
+                <span class="material-symbols-outlined">edit</span>
+            </button>
+            <button id="delete" class="contorlButtons">
+                <span class="material-symbols-outlined">delete</span>
+            </button>
+        </div>
+    </div>
+        <div class="coursInfo">
+            <div class="infoTitle">
+                <h3>פרטי קורס:</h3>
+            </div>
+            <div class="info"> 
+                <div>
+                    <p>שם:</p>
+                    <input class="coursInput" name="name" type="text" autofocus required value="<%= cours.name %>" disabled> 
+                </div>
+                <div>
+                    <p>תיאור:</p>
+                    <input class="coursInput" name="email" type="text" autofocus required value="<%= cours.description %>" disabled> 
+                </div>
+            </div>
+        </div>
+        <div class="coursBody">
+            <% sections.forEach(function(sec) { %> 
+                <div class="section">
+                    <div class="sectionTitleBox">
+                        <div class="title"><h2 class="sectionTitle"><%= sec.order %>.</h2><h2 class="sectionTitle"><%= sec.name %></h2></div>
+                        <span class="material-symbols-outlined">more_vert</span> 
+                    </div>
+                    <% sec.quiz.forEach(function(quiz) { %> 
+                        <div class="sectionQuizs">
+                            <p class="quiz"><%= quiz.title %></p>
+                        </div>
+                    <% }) %> 
+                </div>
+            <% }) %> 
+               
+            <div class="finalTest">
+                <h2 class="sectionTitle">מבחן סיום</h2>
+                <span class="material-symbols-outlined">more_vert</span> 
+            </div> 
+        </div>
+        <script>
+            const deleteButton = document.querySelector('#delete')
+            const cancelButton = document.querySelector('#cancel')
+            const alertdelete = document.querySelector('.alert')
+            deleteButton.addEventListener("click", () => {
+                alertdelete.classList.add('alertshow')
+            })
+            cancelButton.addEventListener("click", () => {
+                alertdelete.classList.remove('alertshow')
+            })
+        </script>
+</body>
+</html> 

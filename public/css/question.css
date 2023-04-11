@@ -1,0 +1,145 @@
+body {
+    --color-primary: #4296E3;
+    --color-primary-dark: #3477b3;
+    --color-error: #ca5858;
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+    padding-right: 30px;
+    padding-left: 30px;
+    padding-bottom: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.questionBox {
+    height: 800px;
+    width: 600px;  
+    margin-top: 15px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    border: 1px solid;
+    border-color: #f0f0f0;
+    border-radius: 15px;
+    padding-right: 15px;
+    padding-left: 15px;
+    background-color: white;
+    padding-bottom: 15px;
+}
+
+.titleBox {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    gap: 5px;
+}
+
+.question {
+    width: 100%;
+    height: max-content;
+}
+
+.titleBox  > a > span {
+    font-size: 50px;
+    cursor: pointer;
+    color: black;
+}
+
+.title {
+    margin: 0;
+}
+
+.answers {
+    width: 100%;
+    height: max-content;
+}
+
+.answerBox {
+    width: 100%;
+    height: 70px; 
+}
+.answer {
+    outline: none;
+    background-color: #EDEDED;
+    color: #3a3a3a;
+    font-weight: 100;
+    height: 50px;
+    text-align: right;
+    padding: 1px 1em 1px 1px;
+    font-size: 25px;
+    width: 90%;
+    font-family: 'Open Sans', sans-serif; 
+    border-radius: 11px;
+    border: 0;
+}
+
+.contols {
+    width: 100%;
+    height: 10%;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    gap: 15px;
+}
+
+.save {
+    outline: none;
+    background-color: #4296E3;
+    color: white;
+    font-weight: 100;
+    height: 50px;
+    text-align: center;
+    font-size: 25px;
+    width: 90%;
+    font-family: 'Open Sans', sans-serif; 
+    border-radius: 11px;
+    border: 0;
+    cursor: pointer;
+}
+
+.delete {
+    outline: none;
+    background-color: #ca5858;
+    color: white;
+    font-weight: 100;
+    height: 50px;
+    text-align: center;
+    font-size: 25px;
+    width: 50px;
+    font-family: 'Open Sans', sans-serif; 
+    border-radius: 11px;
+    border: 0;
+    cursor: pointer;
+}
+
+.save:hover {
+    background-color: #3477b3;
+}
+
+.delete:hover {
+    background-color: #692d2d;
+}
+
+.categorySelect {
+    margin-top: 15px;
+    width: 100%;
+    color: white;
+    margin-bottom: 10px;
+    border: 0;
+    height: 40px;
+    background-color: #4296E3;
+    border-radius: 15px;
+    font-family: 'Open Sans', sans-serif; 
+    padding: 3px, 3px, 3px, 3px;
+}
+
+.categorySelect:focus {
+    background-color: #3477b3;    
+}
+
+.imageAdd {
+    width: 100%;
+    height: 100px;
+    background-color: #3a3a3a;
+}
+

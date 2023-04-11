@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/addquiz.css">
+    <title>הוסף שאלה</title>
+</head>
+<body dir="rtl">
+    <div class="quiz">
+        <form action="/admin/coursformats/<%= cours.id %>/edit/addquiz" method="POST" class="quizBox">
+            <div class="titleBox">
+                <h1 class="title">הוספת שאלה באמצע קורס</h1>
+                <div>
+                    <p>זמן:</p>
+                    <input class="coursInput" type="text" autofocus required placeholder="00:00:00" disabled>
+                    <input id="currentTime" name="time" type="hidden">
+                </div>
+            </div>
+            <div class="answers">
+                <div class="titleOfQuiz">
+                    <p>שאלה:</p>
+                    <input class="coursInput" name="title" type="text" autofocus required> 
+                </div>
+                <div class="answerBox">1.
+                    <input type="text" class="answer" name="op1">
+                </div> 
+                <div class="answerBox">2.
+                    <input type="text" class="answer" name="op2">
+                </div>
+                <div class="answerBox">3.
+                    <input type="text" class="answer" name="op3">
+                </div>
+                <div class="answerBox">4.
+                    <input type="text" class="answer" name="op4">
+                </div>
+            </div>
+            <div class="contols">
+                <button class="save">שמור</button>
+                <button class="delete" onclick="window.location ='/admin/coursformats/<%= cours.id %>/edit'">ביטול</button>
+            </div>
+        </form>
+    </div>
+    <div class="video">
+        <video class="videoPlayer" src="/video/v1.mp4" id="video" controls></video>
+    </div>
+    <script>
+        const video = document.querySelector('.videoPlayer')
+        const timeInput = document.querySelector('.coursInput')
+        const currentTimeInput = document.querySelector('#currentTime')
+        video.addEventListener("timeupdate", () => {
+            timeInput.setAttribute("value", formatDuration(video.currentTime))
+            currentTimeInput.setAttribute("value", video.currentTime)
+        })
+
+        const leadingZeroFormatter = new Intl.NumberFormat(undefined, {
+            minimumIntegerDigits: 2,
+        })
+
+        function formatDuration(time) {
+            const seconds = Math.floor(time % 60)
+            const minutes = Math.floor(time / 60) % 60
+            const hours = Math.floor(time / 3600)
+            if (hours === 0 ) {
+                return `${minutes}:${leadingZeroFormatter.format(seconds)}`
+            } else {
+                return `${hours}:${leadingZeroFormatter.format(
+                    minutes
+                )}:${leadingZeroFormatter.format(seconds)}`
+            }
+        }
+    </script>
+</body>
+</html>

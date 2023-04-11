@@ -1,0 +1,309 @@
+body {
+    --color-primary: #4296E3;
+    --color-primary-dark: #3477b3;
+    --color-error: #ca5858;
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+    padding-right: 30px;
+    padding-left: 30px;
+}
+
+
+.Logo {
+    font-family: 'Open Sans', sans-serif;
+    text-align: right;
+    position: absolute;
+    font-size: 30px;
+}
+
+.Logo1 {
+    font-weight: 100;    
+}
+
+.Logo2 {
+    font-weight: 1000;
+}
+
+.UserBar {
+    left: 60px;
+    position: absolute;
+    vertical-align: middle;
+}
+
+.UserName {
+    color: black;
+    vertical-align: middle;
+}
+
+.material-symbols-outlined {
+    vertical-align: middle;
+}
+
+.Space {
+    width: 100%;
+    height: 70px;
+    background-color: white;
+}
+
+.header {
+    width: 100%;
+    height: 80px;
+    background-color: white;
+    position: fixed;
+    box-sizing: border-box;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.UsersBox {
+    width: 100%;
+    height: 85%;
+    border-style: solid;
+    border-color: #cecece;
+    border-width: 1px;
+    border-radius: 25px;
+    -moz-border-radius: 25px;
+    overflow: hidden;
+}
+
+.navBar {
+    width: 100%;
+    height: 10%;
+    background-color: rgb(255, 255, 255);  
+    border-bottom-style: solid;
+    border-color: #cecece;
+    border-width: 1px;  
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    padding-right: 20px;
+    padding-left: 20px;
+}
+
+.Users {
+    width: 100%;
+    height: 90%;
+    background-color: rgb(255, 255, 255);    
+    overflow: auto;
+    text-align:justify;
+}
+
+
+.searchBox {
+ width: 10%;
+ height: 33%;
+ display: flex;
+}
+
+.searchButton {
+    background-color: white;
+    border: 0;
+    cursor: pointer;
+}
+.search {
+    background-color: none;
+    border: 0;
+    outline: none;
+    font-size: 20px;
+    color: #979797;
+    font-family: 'Open Sans', sans-serif;
+}
+
+input[type="search"]::-webkit-search-cancel-button {
+    display: none;
+}
+
+.search:focus .searchButton:focus {
+    background-color: none;
+    border: 0; 
+    stroke: none;   
+    outline: none;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.search::placeholder {
+    background-color: none;
+    border: 0;
+    outline: none;
+    font-size: 20px;
+    color: #979797;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.search:hover .searchButton:hover {
+    background-color: none;
+    border: 0;    
+}
+
+.add {
+    font-weight: 500;
+    font-family: 'Open Sans', sans-serif;
+    border: 0; 
+    padding-left: 15px;  
+    padding-right: 15px;  
+    padding-top: 5px;  
+    padding-bottom: 5px;
+    border-radius: 10px;
+    background-color: #4296E3;
+    width: 100px;
+    color: white;
+    cursor: pointer;
+}
+
+.remove {
+    font-weight: 500;
+    font-family: 'Open Sans', sans-serif;
+    border: 0; 
+    padding-left: 25px;  
+    padding-right: 25px;  
+    padding-top: 5px;  
+    padding-bottom: 5px;
+    border-radius: 10px;
+    background-color: #e34242;
+    color: white;
+    cursor: pointer;
+}
+
+.remove > span, .add > span {
+
+    margin-left: 5px;
+}
+
+.add:hover {
+    background-color:#3477b3;   
+}
+
+.remove:hover {
+    background-color: #a73232;    
+}
+
+.UserBox {
+    border-bottom-style: solid;
+    border-color: #e6e6e6;
+    border-width: 1px;  
+    width: 100%;
+    height: 90px;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.UserBox:hover {
+    background-color: aliceblue;   
+    cursor: pointer;
+}
+
+.userData {
+    width: 220px;
+}
+
+.userImage {
+    width: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.username {
+    margin-bottom: 0px;
+}
+
+.email {
+    margin-top: 0px;
+}
+
+.userControls {
+    width: 50px;
+    justify-content: space-between;
+    display: flex;
+}
+
+.userControls > span {
+    cursor: pointer;
+}
+
+.User {
+    display: flex;
+
+}
+
+.options {
+    display: none;
+    position: absolute;
+    height: 130px;
+    width: 130px;
+    background-color: #ffffff;
+    transform: translate(120px, 25px);
+    border-radius: 15px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    transition: all 0.2s;
+}
+
+.optionsVisibal {
+    display: block;
+    position: absolute;
+    height: 130px;
+    width: 130px;
+    background-color: #ffffff;
+    transform: translate(120px, 25px);
+    border-radius: 15px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    transition: all 0.2s;
+}
+
+.quickactionsBox {
+    height: 220px;
+    width: 100%;   
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.quickaction {
+    height: 200px;
+    width: 23%;
+    background-color: #4296E3; 
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    text-align: center;
+}
+
+.quickaction span {
+    color: white;   
+    font-size: 70px;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+}
+
+.quickactionTitle {
+    color: white;   
+    font-size: 40px;
+}
+
+.quickaction:first-child {
+    background-color: #1c4364;
+}
+
+.quickaction:nth-child(2) {
+    background-color: #3477b3;
+    text-align: center;
+}
+.quickaction:nth-child(4) {
+    background-color: #5da7e7;
+}
+
+.option {
+    width: 100%;
+    height: 33.33%;
+    background: none;
+    border: none;
+}

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/dashBoard.css">
+    <title>לוח בקרה</title>
+</head>
+<body  dir="rtl"> 
+    <div class="header">
+        <div class="Logo">
+            <a class="Logo1">לומדה</a>
+            <a class="Logo2">פדיקר</a>
+        </div>
+        <div class="UserBar">
+            <a class="UserName"><%= name %> </a>
+            <span class="material-symbols-outlined">
+                admin_panel_settings
+                </span>
+        </div>
+    </div>
+    <div class="Space"></div>
+    <div class="quickactionsBox">
+        <div onclick="window.location='/admin/coursformats'" class="quickaction" id="coursFormats">
+            <h4 class="quickactionTitle">תבניות קורסים</h4>
+        </div>
+        <div class="quickaction">
+            <h4 class="quickactionTitle">התקדמות משתמשים</h4>
+        </div>
+        <div onclick="window.location='/admin/tests'" class="quickaction">
+            <h4 class="quickactionTitle">מבחנים</h4>
+        </div>
+        <div class="quickaction">
+            <h4 class="quickactionTitle">סטטיסטיקה</h4>
+        </div>
+    </div>
+    <div class="UsersBox">
+        <div class="navBar">
+            <div class="searchBox">
+                <button class="searchButton"><span class="material-symbols-outlined">search</span></button>   
+                <input class="search" type="search" placeholder="חפש משתמשים...">
+            </div>
+            <div class="controls" dir="ltr">
+                <button class="add" onclick="window.location='/admin/adduser'" >הוסף<span class="material-symbols-outlined">add</span></button>
+                <button onclick="window.location='/admin/adduser'" class="remove">הסר<span class="material-symbols-outlined">delete</span></button>
+            </div>
+        </div>
+        <div class="Users">
+            <% users.forEach(function(user) { %>
+                <div onclick="window.location='/admin/<%= user.id %>'" class="UserBox">
+                    <div class="User">
+                        <div class="userImage">
+                            <span style="font-size: 50px;" class="material-symbols-outlined">
+                                account_circle
+                            </span>
+                        </div>
+                        <div class="userData">
+                            <h2 class="username"><%= user.name %></h2>
+                            <p class="email"><%= user.email %></p>
+                        </div>
+                    </div>
+                    <div class="userControls">
+                    </div>
+                </div>    
+           <% }) %>     
+        </div>
+    </div>
+
+    <script src="/animations/options.js"></script>
+    <div class="main">
+    </div>
+</body>
+</html> 

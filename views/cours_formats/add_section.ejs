@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/add_section.css">
+    <title>הוסף סעיף</title>
+</head>
+<body  dir="rtl"> 
+    <div onclick="window.location='/admin/coursformats/<%= cours.id %>'" class="Logo">
+        <span class="material-symbols-outlined">arrow_forward_ios</span>
+    </div>
+    <div class="UserBar">
+        <div class="userOptions">
+            <form action="/logout?_method=DELETE" method="POST">
+                <button type="submit" class="logOutButton"><span class="material-symbols-outlined">logout</span>התנתקות</button>
+            </form>
+        </div>
+        <span class="material-symbols-outlined" name="moreOptions", id="moreOptions">expand_more</span>
+        <a class="UserName"></a>
+        <span class="material-symbols-outlined">
+            account_circle
+        </span>
+    </div>
+    <div class="space"></div>
+    <div class="coursesBox"> 
+        <% sections.forEach(function(section) { %>
+            <form action="/admin/coursformats/<%= cours.id %>/addsection/<%= section.id %>" method="POST">
+                <div class="cours">
+                    <div>
+                        <h3 class="coursTitle" name="name"><%= section.name %></h3>
+                        <p class="coursDes"><%= section.id %></p>
+                        <button class="addSec">הוסף</button>
+                    </div>
+                    <span class="material-symbols-outlined">more_vert</span>
+                </div> 
+            </form>
+       <% }) %>   
+        <div class="addcours">
+            <span class="material-symbols-outlined">add</span>
+        </div>  
+    </div>
+</body>
+</html> 
